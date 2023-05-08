@@ -48,7 +48,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="askPermission()">
     <script src="app.js" type="text/javascript"></script>
     <!--IMAGETARGETS-->
 		<imagetarget id='frog' src='targets/frog2.jpg'></imagetarget>
@@ -85,6 +85,24 @@
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 container.className = "unity-mobile";
             }
+            function askPermission(){
+
+//add constraints object
+var constraints = {
+    audio:true,
+    video:true};
+
+//call getUserMedia
+navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
+
+    //var video = document.querySelector('video');
+    //video.srcObject = mediaStream;
+    //  video.play();
+    }).catch(function(err){
+        console.log("There's an error!" + err.message);
+    })
+
+}
             function StartCamera() {
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
