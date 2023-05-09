@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | EduDome</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-        html{
+      html{
             height: -webkit-fill-available;
         }
         body {
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <script src="Build/5_8_4.loader.js"></script>
+    <script src="Build/5_9_1.loader.js"></script>
     <script>
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
@@ -86,32 +86,23 @@
                 container.className = "unity-mobile";
             }
             function askPermission(){
-
-//add constraints object
-var constraints = {
-    audio:false,
-    video:true};
-
-//call getUserMedia
-navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
-
-    //var video = document.querySelector('video');
-    //video.srcObject = mediaStream;
-    //  video.play();
-    }).catch(function(err){
-        console.log("There's an error!" + err.message);
-    })
-
-}
+            var constraints = {
+            audio:false,
+            video:true};    
+            navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
+            }).catch(function(err){
+            console.log("There's an error!" + err.message);
+            })
+            }
             function StartCamera() {
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
                 
                 document.getElementById("startWebcamDiv").style.display = "none";
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/5_8_4.data",
-                    frameworkUrl: "Build/5_8_4.framework.js",
-                    codeUrl: "Build/5_8_4.wasm",
+                    dataUrl: "Build/5_9_1.data",
+                    frameworkUrl: "Build/5_9_1.framework.js",
+                    codeUrl: "Build/5_9_1.wasm",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
                     productName: "EduDome",
