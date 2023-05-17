@@ -48,21 +48,21 @@
         }
     </style>
 </head>
-<body onload="askPermission()">
+<body onload="askPermission();StartCamera()">
     <script src="app.js" type="text/javascript"></script>
     <!--IMAGETARGETS-->
 		<imagetarget id='frog' src='targets/frog2.jpg'></imagetarget>
 		<imagetarget id='dome' src='targets/dome.jpg'></imagetarget>
 		<imagetarget id='box' src='targets/cave.png'></imagetarget>
 		<imagetarget id='column' src='targets/cylinder.png'></imagetarget>
-		<imagetarget id='poster' src='targets/postervert.png'></imagetarget>
+		<imagetarget id='poster' src='targets/cardvert.png'></imagetarget>
 
     <div id="startWebcamDiv" class="ctaDiv">
-        <h2 style="font-size: 200%;text-align: center;">DOME察先機<br><span style="font-size: 79%;">沉浸式小學堂<span></h2>
+       <!-- <h2 style="font-size: 200%;text-align: center;">DOME察先機<br><span style="font-size: 79%;">沉浸式小學堂<span></h2>
             <p style="text-align: center; width:80vw">小朋友，讓我們一起找尋答案，並成功蒐集徽章吧！回答正
                 確會獲得一枚徽章，最後成功蒐集四個徽章就可以領獎「通
                 關證書」喔!</p>
-            <button id="startCameraBtn" onclick="StartCamera()" style="display:none">開始</button>
+            <button id="startCameraBtn" onclick="StartCamera()" style="display:none">開始</button>!-->
     </div>
     <div id="startWebcamManuallyDiv" style="display: none" class="ctaDiv">
         <button onclick="StartCameraManually()" style="width:180px; height:40px; border:1px solid gray; border-radius:8px">START WEBCAM</button>
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <script src="Build/5_9_1.loader.js"></script>
+    <script src="Build/5_16_1.loader.js"></script>
     <script>
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
@@ -100,9 +100,9 @@
                 
                 document.getElementById("startWebcamDiv").style.display = "none";
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/5_9_1.data",
-                    frameworkUrl: "Build/5_9_1.framework.js",
-                    codeUrl: "Build/5_9_1.wasm",
+                    dataUrl: "Build/5_16_1.data",
+                    frameworkUrl: "Build/5_16_1.framework.js",
+                    codeUrl: "Build/5_16_1.wasm",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
                     productName: "EduDome",
