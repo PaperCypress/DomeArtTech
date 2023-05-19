@@ -85,6 +85,7 @@
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
             var loadingBar = document.querySelector("#unity-loading-bar");
+            var footer = document.querySelector("#footer");
             var progressBarFull = document.querySelector("#unity-progress-bar-full");
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 container.className = "unity-mobile";
@@ -135,6 +136,7 @@
                     };
                     window.waitForVideo();
                     loadingBar.style.display = "none";
+                    footer.style.display = "none";
                 });
                 loadingBar.style.display = "block";
             }
